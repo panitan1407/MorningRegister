@@ -75,12 +75,25 @@
     }
 
     function getEnvironment() {
+      document.getElementById("os").append(liff.getOS())  // appendเอา string มาต่อกัน
+      document.getElementById("language").append(liff.getLanguage())
+      document.getElementById("version").append(liff.getVersion())
+      document.getElementById("accessToken").append(liff.getAccessToken())  //ไม่แช่ค่า Channel ใช้ verify คำสั่งต่างๆ
+      document.getElementById("isInClient").append(liff.isInClient())  //บอกว่าเปิดใน line หรือ external browser
+      if (liff.isInClient()){
+        document.getElementById("btnLogOut").style.display="none"
+      }else{
+        document.getElementById("btnMsg").style.display="none"
+        document.getElementById("btnScanCode").style.display="none"
+        document.getElementById("btnClose").style.display="none"
+        }
+      
     }
 
     async function main() {
       alert("LINE Developers x Skooldio")
-      await liff.init({ liffId: "YOUR-LIFF-ID" })
-      // getEnvironment()
+      await liff.init({ liffId: "U584ca79268d845385fb296d5565dcee5" })
+       getEnvironment()
       // getUserProfile()
       // getContext()
       // getFriendship()
