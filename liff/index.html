@@ -75,7 +75,7 @@
     }
 
     function getEnvironment() {
-      document.getElementById("os").append(liff.getOS())  // appendเอา string มาต่อกัน
+      document.getElementById("os").append(liff.getOS())   // appendเอา string มาต่อกัน
       document.getElementById("language").append(liff.getLanguage())
       document.getElementById("version").append(liff.getVersion())
       document.getElementById("accessToken").append(liff.getAccessToken())  //ไม่แช่ค่า Channel ใช้ verify คำสั่งต่างๆ
@@ -91,7 +91,7 @@
     }
 
     async function main() {
-      alert("LINE Developers x Skooldio")
+      //alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1654429554-x4BwYR25" })
        getEnvironment()
       // getUserProfile()
