@@ -69,6 +69,11 @@
     }
 
     function getContext() {
+      document.getElementById("type").append(liff.getContext().type)   //บอกว่า จาก Group หรือ Room หรือ Browser
+      document.getElementById("viewType").append(liff.getContext().viewType) //liff เลือก View แบบไหน Compact Tall Full
+      document.getElementById("utouId").append(liff.getContext().utouId) //ถ้าคุยแบบห้อง one on one จะมีค่า แต่ถ้าแบบอื่นไม่มีค่า
+      document.getElementById("roomId").append(liff.getContext().roomId) //roomID อะไร
+      document.getElementById("groupId").append(liff.getContext().groupId) //groupID อะไร
     }
 
     async function getUserProfile() {
@@ -103,7 +108,7 @@
       await liff.init({ liffId: "1654429554-x4BwYR25" })
        getEnvironment()
        getUserProfile()
-      // getContext()
+       getContext()
       // getFriendship()
       // createUniversalLink()
     }
